@@ -3,6 +3,14 @@ import logo from "../img/logo.png";
 import shapes from "../img/shapes.png";
 
 const Onboarding = () => {
+  const start = () => {
+    const splashPage = document.querySelector(".container");
+    splashPage.classList.add("hidden");
+    setTimeout(() => {
+      splashPage.classList.add("visuallyHidden");
+    }, 350);
+  };
+
   return (
     <div className="container">
       <img className="logo" src={logo} alt="logo" />
@@ -13,7 +21,7 @@ const Onboarding = () => {
           tristique nam tortor rhoncus dignissim interdum id. Feugiat lorem
           adipiscing.
         </p>
-        <button>Get Started</button>
+        <button onClick={start}>Get Started</button>
       </div>
       <div className="shapes">
         <img src={shapes} />

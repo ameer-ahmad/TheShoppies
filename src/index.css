@@ -16,6 +16,9 @@ html {
     font-family: "Shopify Sans Web Medium", Arial, Helvetica, sans-serif;
 }
 
+
+/* ONBOARDING PAGE */
+
 .onboarding {
     max-width: 894px;
     width: 45%;
@@ -71,10 +74,54 @@ html {
 
 .container {
     display: flex;
+    opacity: 1;
+    transition: all 300ms ease-in-out;
+    display: none;
 }
 
 .shapes {
     margin: auto;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.visuallyHidden {
+    display: none;
+}
+
+
+/* SEARCH BOX */
+
+.searchContainer {
+    display: flex;
+}
+
+.input-wrapper {
+    display: flex;
+    width: 50%;
+    height: 7.6rem;
+    font-size: 2.4rem;
+    align-items: center;
+    justify-content: space-between;
+    background: #333538;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    color: white;
+}
+
+input {
+    margin: 0 0.5rem 0 0.5rem;
+    width: 100%;
+    border: none;
+    outline: none;
+    background: #333538;
+    color: white;
+}
+
+::placeholder {
+    color: #f0b2a8;
 }
 
 
