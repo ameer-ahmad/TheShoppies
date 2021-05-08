@@ -1,13 +1,78 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Import Fonts */
+
+@import url(//db.onlinewebfonts.com/c/ad26818d844de4534fd78bb03028ca79?family=Shopify+Sans+Web+Medium);
+@import url(//db.onlinewebfonts.com/c/d2113531b60b80abb9710c514ca5fcfa?family=Shopify+Sans+Web+Bold);
+@import url(//db.onlinewebfonts.com/c/1fa6f8f49a331cc09801c741de42ab84?family=Shopify+Sans+Black);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+    font-size: 10px;
+    background: #212326;
+    color: white;
+    font-family: "Shopify Sans Web Medium", Arial, Helvetica, sans-serif;
+}
+
+.onboarding {
+    max-width: 894px;
+    width: 45%;
+    height: 100vh;
+    background: rgba(52, 54, 57, 0.56);
+    border-radius: 0 2.4rem 2.4rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 15rem;
+}
+
+.onboarding h1 {
+    font-family: "Shopify Sans Web Medium", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 7rem;
+    line-height: 9.2rem;
+    color: #F2F2F2;
+    margin-bottom: 5rem;
+}
+
+.onboarding p {
+    font-family: "Shopify Sans Web Medium", Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 2.4rem;
+    line-height: 4rem;
+    color: #C6C9CD;
+    margin-bottom: 7rem;
+}
+
+.onboarding button {
+    background: #95BF47;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border: none;
+    color: #2D2f32;
+    font-family: "Shopify Sans Web Medium", Arial, Helvetica, sans-serif;
+    font-size: 2.4rem;
+}
+
+
+/* Font Face */
+
+@font-face {
+    font-family: "Shopify Sans Web Medium";
+    src: url("//db.onlinewebfonts.com/t/ad26818d844de4534fd78bb03028ca79.eot");
+    src: url("//db.onlinewebfonts.com/t/ad26818d844de4534fd78bb03028ca79.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/ad26818d844de4534fd78bb03028ca79.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/ad26818d844de4534fd78bb03028ca79.woff") format("woff"), url("//db.onlinewebfonts.com/t/ad26818d844de4534fd78bb03028ca79.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/ad26818d844de4534fd78bb03028ca79.svg#Shopify Sans Web Medium") format("svg");
+}
+
+@font-face {
+    font-family: "Shopify Sans Web Bold";
+    src: url("//db.onlinewebfonts.com/t/d2113531b60b80abb9710c514ca5fcfa.eot");
+    src: url("//db.onlinewebfonts.com/t/d2113531b60b80abb9710c514ca5fcfa.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/d2113531b60b80abb9710c514ca5fcfa.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/d2113531b60b80abb9710c514ca5fcfa.woff") format("woff"), url("//db.onlinewebfonts.com/t/d2113531b60b80abb9710c514ca5fcfa.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/d2113531b60b80abb9710c514ca5fcfa.svg#Shopify Sans Web Bold") format("svg");
+}
+
+@font-face {
+    font-family: "Shopify Sans Black";
+    src: url("//db.onlinewebfonts.com/t/1fa6f8f49a331cc09801c741de42ab84.eot");
+    src: url("//db.onlinewebfonts.com/t/1fa6f8f49a331cc09801c741de42ab84.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/1fa6f8f49a331cc09801c741de42ab84.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/1fa6f8f49a331cc09801c741de42ab84.woff") format("woff"), url("//db.onlinewebfonts.com/t/1fa6f8f49a331cc09801c741de42ab84.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/1fa6f8f49a331cc09801c741de42ab84.svg#Shopify Sans Black") format("svg");
 }
