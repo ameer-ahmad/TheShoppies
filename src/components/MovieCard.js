@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import star from "../img/star.png";
 
-const MovieCard = ({ movie }) => {
+const MovieCard = (props) => {
+  const { movie } = props;
   let [movieData, setMovieData] = useState({});
-  let [nominees, setNominees] = useState([]);
   useEffect(async () => {
     try {
       const url = `http://www.omdbapi.com/?i=${movie.imdbID}&apikey=92b81fc0`;
@@ -15,18 +15,15 @@ const MovieCard = ({ movie }) => {
     }
   });
 
-  const addNominee = (e) => {
-    setNominees((prevNominees) => {
-      return [...prevNominees, e.target];
-    });
-    console.log(nominees);
-  };
-
   return (
     <div className="movie-card">
       <div className="movie-image">
         <img src={movieData.Poster} alt="" />
-        <button className="nominateSmallBtn" onClick={addNominee}>
+        <button
+          className="nominateSmallBtn"
+          onClick={(e) => props.onClick(e.target.id)}
+          id={movie.imdbID}
+        >
           +
         </button>
       </div>

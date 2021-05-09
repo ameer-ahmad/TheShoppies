@@ -8,6 +8,8 @@ const Search = () => {
   const [query, setQuery] = useState("");
   // State for movies
   const [movies, setMovies] = useState([]);
+  // State for nominees
+  const [nominees, setNominees] = useState([]);
 
   const searchQueries = async (e) => {
     e.preventDefault();
@@ -43,8 +45,18 @@ const Search = () => {
       </div>
       <div className="movie-list">
         {movies.map((movie) => (
-          <MovieCard movie={movie} key={movie.imdbID} />
+          <MovieCard
+            movie={movie}
+            key={movie.imdbID}
+            onClick={(value) =>
+              setNominees((prevNominees) => [value, ...prevNominees])
+            }
+          />
         ))}
+      </div>
+      <div className="nominations-list">
+        <h2>Nominations</h2>
+        <button>Add (5) Movies</button>
       </div>
     </>
   );
