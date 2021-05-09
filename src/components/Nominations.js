@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import star from "../img/star.png";
 
-const Nominations = ({ nominee }) => {
+const Nominations = (props) => {
+  const { nominee } = props;
   const [movieData, setMovieData] = useState({});
   const genre =
     typeof movieData.Genre === "string" ? movieData.Genre.split(",")[0] : "";
@@ -15,8 +16,7 @@ const Nominations = ({ nominee }) => {
     } catch (err) {
       console.error(err);
     }
-  });
-
+  }, []);
   return (
     <div className="nominationCard">
       <img className="nomineePoster" src={movieData.Poster} alt="" />
@@ -28,7 +28,14 @@ const Nominations = ({ nominee }) => {
           <span>{movieData.imdbRating}</span>
         </p>
       </div>
-      <button className="removeNominee">X</button>
+      <button
+        className="removeNominee"
+        onClick={(e) => {
+          props.onClick(nominee);
+        }}
+      >
+        X
+      </button>
     </div>
   );
 };

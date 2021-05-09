@@ -12,6 +12,8 @@ const Search = () => {
   // State for nominees
   const [nominees, setNominees] = useState([]);
 
+  let numNominees = nominees.length;
+
   const searchQueries = async (e) => {
     e.preventDefault();
 
@@ -24,6 +26,16 @@ const Search = () => {
     } catch (err) {
       console.error(err);
     }
+  };
+
+  const deleteNominee = (id) => {
+    if (nominees.length === 1 && nominees[0] === id) {
+      setNominees([]);
+    } else {
+      let noms = nominees.filter((nom) => nom !== id);
+      setNominees([noms]);
+    }
+    console.log(nominees[0]);
   };
 
   return (
@@ -56,11 +68,25 @@ const Search = () => {
       </div>
       <div className="nominations-list">
         <h2>Nominations</h2>
-        {nominees.map((nominee) => (
-          <Nominations nominee={nominee} key={nominee} />
-        ))}
-        <button className="addNominees">
-          Add <span style={{ color: "rgba(242, 242, 242, 0.78)" }}>(5)</span>{" "}
+        {nominees.length > 0
+          ? nominees.map((nominee) => (
+              <Nominations
+                nominees={nominees}
+                nominee={nominee}
+                key={nominee}
+                onClick={deleteNominee}
+              />
+            ))
+          : ""}
+        <button
+          className={
+            numNominees === 5 ? "addNominees nominateMovies" : "addNominees"
+          }
+        >
+          Add{" "}
+          <span style={{ color: "rgba(242, 242, 242, 0.78)" }}>
+            {5 - numNominees}
+          </span>{" "}
           Movies
         </button>
       </div>
