@@ -61,6 +61,7 @@ const Search = () => {
         {movies.map((movie) => (
           <MovieCard
             movie={movie}
+            nominees={nominees}
             key={movie.imdbID}
             onClick={(value) =>
               setNominees((prevNominees) => [value, ...prevNominees])

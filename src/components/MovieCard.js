@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import star from "../img/star.png";
 
 const MovieCard = (props) => {
-  const { movie } = props;
+  const { movie, nominees } = props;
   const [movieData, setMovieData] = useState({});
   const genre =
     typeof movieData.Genre === "string" ? movieData.Genre.split(",")[0] : "";
@@ -23,12 +23,15 @@ const MovieCard = (props) => {
       <div className="movie-image">
         <img src={movieData.Poster} alt="" />
         <button
-          className="nominateSmallBtn"
+          disabled={nominees.includes(movie.imdbID) || nominees.length === 5}
+          className={
+            !nominees.includes(movie.imdbID) && nominees.length === 5
+              ? "disabledBtn"
+              : "nominateSmallBtn"
+          }
           onClick={(e) => props.onClick(e.target.id)}
           id={movie.imdbID}
-        >
-          +
-        </button>
+        ></button>
       </div>
       <h3 className="movie-title">{movieData.Title}</h3>
       <p className="movie-info">{`${movieData.Year} • ${genre}`}</p>

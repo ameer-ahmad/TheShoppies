@@ -36,7 +36,7 @@ html {
     font-weight: bold;
     font-size: 7rem;
     line-height: 9.2rem;
-    color: #F2F2F2;
+    color: #f2f2f2;
     margin-bottom: 5rem;
 }
 
@@ -45,16 +45,16 @@ html {
     font-weight: 500;
     font-size: 2.4rem;
     line-height: 4rem;
-    color: #C6C9CD;
+    color: #c6c9cd;
     margin-bottom: 7rem;
 }
 
 .onboarding button {
-    background: #95BF47;
+    background: #95bf47;
     padding: 1.5rem;
-    border-radius: .8rem;
+    border-radius: 0.8rem;
     border: none;
-    color: #2D2f32;
+    color: #2d2f32;
     font-family: "Shopify Sans Web Medium", Arial, Helvetica, sans-serif;
     font-size: 2.4rem;
     cursor: pointer;
@@ -179,6 +179,42 @@ input {
     background: rgba(98, 133, 147, 0.8);
 }
 
+.disabledBtn::after {
+    content: "\002B";
+}
+
+.disabledBtn:disabled {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border: none;
+    color: white;
+    font-size: 3rem;
+    border-radius: 1rem;
+    left: 15rem;
+    bottom: 7rem;
+    cursor: default;
+    overflow: hidden;
+    background: rgba(61, 83, 92, 0.8);
+}
+
+.nominateSmallBtn::after {
+    content: "\002B";
+}
+
+.nominateSmallBtn:disabled {
+    background: rgba(94, 142, 62, 0.8);
+    cursor: default;
+}
+
+.nominateSmallBtn:disabled::after {
+    content: "\2713";
+    font-size: 2.5rem;
+}
+
 .movie-title {
     font-size: 1.8rem;
     font-weight: bold;
@@ -216,7 +252,7 @@ input {
 
 .addNominees {
     height: 6.8rem;
-    background: rgba(72, 74, 78, .4);
+    background: rgba(72, 74, 78, 0.4);
     border: none;
     border-radius: 0.8rem;
     color: rgba(242, 242, 242, 0.5);
@@ -256,7 +292,7 @@ input {
     height: 4.39rem;
     background: rgba(243, 93, 72, 0.4);
     border: none;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     color: white;
     cursor: pointer;
     position: absolute;
@@ -265,9 +301,13 @@ input {
     display: block;
 }
 
+.removeNominee::after {
+    content: "\2715";
+}
+
 .nominateMovies {
     height: 6.8rem;
-    background: linear-gradient(90deg, #95BF47 50%, rgba(149, 191, 71, 0) 150.98%);
+    background: linear-gradient( 90deg, #95bf47 50%, rgba(149, 191, 71, 0) 150.98%);
     border: none;
     border-radius: 0.8rem;
     color: #212326;

@@ -36,9 +36,7 @@ const Nominations = (props) => {
         onClick={(e) => {
           props.onClick(e.target.id);
         }}
-      >
-        X
-      </button>
+      ></button>
     </div>
   );
 };
