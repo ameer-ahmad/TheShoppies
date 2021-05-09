@@ -68,15 +68,15 @@ html {
 
 .logo {
     width: 147px;
+    height: 28.8px;
     position: absolute;
-    margin: 5rem 0 0 5rem;
+    margin: 7rem 0 0 5rem;
 }
 
 .container {
     display: flex;
     opacity: 1;
     transition: all 300ms ease-in-out;
-    display: none;
 }
 
 .shapes {
@@ -98,26 +98,33 @@ html {
     display: flex;
 }
 
+.searchContainer .logo {
+    position: relative;
+}
+
 .input-wrapper {
+    margin-top: 5rem;
     display: flex;
+    max-width: 1000px;
     width: 50%;
     height: 7.6rem;
-    font-size: 2.4rem;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     background: #333538;
     padding: 0.5rem;
     border-radius: 1rem;
     color: white;
+    margin-left: 10rem;
 }
 
 input {
     margin: 0 0.5rem 0 0.5rem;
-    width: 100%;
+    width: 90%;
     border: none;
     outline: none;
     background: #333538;
     color: white;
+    font-size: 2.4rem;
 }
 
 ::placeholder {
