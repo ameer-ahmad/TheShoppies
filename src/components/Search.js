@@ -78,16 +78,15 @@ const Search = () => {
               />
             ))
           : ""}
-        <button
-          className={
-            numNominees === 5 ? "addNominees nominateMovies" : "addNominees"
-          }
-        >
+        <button className={numNominees === 5 ? "hide" : "addNominees"}>
           Add{" "}
           <span style={{ color: "rgba(242, 242, 242, 0.78)" }}>
             {5 - numNominees}
           </span>{" "}
           Movies
+        </button>
+        <button className={numNominees === 5 ? "nominateMovies" : "hide"}>
+          ★ Nominate
         </button>
       </div>
     </>

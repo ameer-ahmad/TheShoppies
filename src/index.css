@@ -258,6 +258,22 @@ input {
     position: absolute;
     right: 0;
     bottom: 0;
+    display: block;
+}
+
+.nominateMovies {
+    height: 6.8rem;
+    background: linear-gradient(90deg, #95BF47 50%, rgba(149, 191, 71, 0) 150.98%);
+    border: none;
+    border-radius: 0.8rem;
+    color: #212326;
+    font-size: 1.8rem;
+    margin-top: 4rem;
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
 }
 
 
