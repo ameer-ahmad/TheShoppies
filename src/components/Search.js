@@ -29,13 +29,15 @@ const Search = () => {
   };
 
   const deleteNominee = (id) => {
+    console.log(id);
+    console.log(nominees);
     if (nominees.length === 1 && nominees[0] === id) {
       setNominees([]);
     } else {
       let noms = nominees.filter((nom) => nom !== id);
-      setNominees([noms]);
+      console.log(noms);
+      setNominees(noms);
     }
-    console.log(nominees[0]);
   };
 
   return (
@@ -71,7 +73,6 @@ const Search = () => {
         {nominees.length > 0
           ? nominees.map((nominee) => (
               <Nominations
-                nominees={nominees}
                 nominee={nominee}
                 key={nominee}
                 onClick={deleteNominee}
