@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import star from "../img/star.png";
 
 const Nominations = ({ nominee }) => {
-  let [movieData, setMovieData] = useState({});
+  const [movieData, setMovieData] = useState({});
+  const genre =
+    typeof movieData.Genre === "string" ? movieData.Genre.split(",")[0] : "";
 
   useEffect(async () => {
     try {
@@ -20,9 +22,7 @@ const Nominations = ({ nominee }) => {
       <img className="nomineePoster" src={movieData.Poster} alt="" />
       <div className="nomineeInfo">
         <h3>{movieData.Title}</h3>
-        <p className="movie-info">{`${movieData.Year} • ${
-          movieData.Genre.split(",")[0]
-        }`}</p>
+        <p className="movie-info">{`${movieData.Year} • ${genre}`}</p>
         <p className="movie-rating">
           <img src={star} alt="" />
           <span>{movieData.imdbRating}</span>

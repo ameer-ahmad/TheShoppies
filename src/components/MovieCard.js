@@ -3,7 +3,10 @@ import star from "../img/star.png";
 
 const MovieCard = (props) => {
   const { movie } = props;
-  let [movieData, setMovieData] = useState({});
+  const [movieData, setMovieData] = useState({});
+  const genre =
+    typeof movieData.Genre === "string" ? movieData.Genre.split(",")[0] : "";
+
   useEffect(async () => {
     try {
       const url = `http://www.omdbapi.com/?i=${movie.imdbID}&apikey=92b81fc0`;
@@ -28,9 +31,7 @@ const MovieCard = (props) => {
         </button>
       </div>
       <h3 className="movie-title">{movieData.Title}</h3>
-      <p className="movie-info">{`${movieData.Year} • ${
-        movieData.Genre.split(",")[0]
-      }`}</p>
+      <p className="movie-info">{`${movieData.Year} • ${genre}`}</p>
       <p className="movie-rating">
         <img src={star} alt="" />
         <span>{movieData.imdbRating}</span>

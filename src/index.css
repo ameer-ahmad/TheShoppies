@@ -140,7 +140,7 @@ input {
     width: 70%;
     display: grid;
     gap: 2rem 0;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     margin-left: 7.5rem;
     margin-top: 9.4rem;
 }
@@ -203,7 +203,6 @@ input {
     top: 8.4rem;
     display: flex;
     flex-direction: column;
-    z-index: -1;
 }
 
 .nominations-list h2 {
@@ -217,12 +216,15 @@ input {
     border-radius: 0.8rem;
     color: rgba(242, 242, 242, 0.5);
     font-size: 1.8rem;
+    margin-top: 4rem;
+    cursor: pointer;
 }
 
 .nominationCard {
     display: flex;
     width: 100%;
     margin-top: 4rem;
+    position: relative;
 }
 
 .nomineePoster {
@@ -242,6 +244,19 @@ input {
 
 .nominationCard .nomineeInfo {
     font-size: 1.2rem;
+}
+
+.removeNominee {
+    width: 4.39rem;
+    height: 4.39rem;
+    background: rgba(243, 93, 72, 0.4);
+    border: none;
+    border-radius: .5rem;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
 
 

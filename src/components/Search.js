@@ -21,7 +21,6 @@ const Search = () => {
       const res = await fetch(url);
       const movieInfo = await res.json();
       setMovies(movieInfo.Search);
-      console.log(movies);
     } catch (err) {
       console.error(err);
     }
