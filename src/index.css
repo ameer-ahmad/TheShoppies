@@ -132,6 +132,66 @@ input {
 }
 
 
+/* Movie Card */
+
+.movie-list {
+    width: 70%;
+    display: grid;
+    gap: 2rem 0;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    margin-left: 7.5rem;
+    margin-top: 9.4rem;
+}
+
+.movie-card {
+    width: 21.8rem;
+    height: 42.5rem;
+}
+
+.movie-image img {
+    width: 100%;
+    height: 31rem;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+
+.nominateSmallBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border: none;
+    color: white;
+    font-size: 3rem;
+    border-radius: 1rem;
+    left: 15rem;
+    bottom: 7rem;
+    cursor: pointer;
+    overflow: hidden;
+    background: rgba(98, 133, 147, 0.8);
+}
+
+.movie-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-top: -3.5rem;
+}
+
+.movie-info {
+    font-size: 1.4rem;
+    color: rgba(242, 242, 242, 0.48);
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.movie-rating span {
+    font-size: 1.4rem;
+    margin-left: 1rem;
+}
+
+
 /* Font Face */
 
 @font-face {
