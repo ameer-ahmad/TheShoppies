@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import logo from "../img/logo.png";
+import logo from "../img/bigLogo.png";
 import searchIcon from "../img/search.png";
 import MovieCard from "./MovieCard";
+import Nominations from "./Nominations";
 
 const Search = () => {
   // State for search results
@@ -56,7 +57,13 @@ const Search = () => {
       </div>
       <div className="nominations-list">
         <h2>Nominations</h2>
-        <button>Add (5) Movies</button>
+        {nominees.map((nominee) => (
+          <Nominations nominee={nominee} key={nominee} />
+        ))}
+        <button className="addNominees">
+          Add <span style={{ color: "rgba(242, 242, 242, 0.78)" }}>(5)</span>{" "}
+          Movies
+        </button>
       </div>
     </>
   );

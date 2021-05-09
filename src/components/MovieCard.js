@@ -13,7 +13,7 @@ const MovieCard = (props) => {
     } catch (err) {
       console.error(err);
     }
-  });
+  }, [movie.imdbID]);
 
   return (
     <div className="movie-card">
@@ -28,7 +28,9 @@ const MovieCard = (props) => {
         </button>
       </div>
       <h3 className="movie-title">{movieData.Title}</h3>
-      <p className="movie-info">{`${movieData.Year} • ${movieData.Genre}`}</p>
+      <p className="movie-info">{`${movieData.Year} • ${
+        movieData.Genre.split(",")[0]
+      }`}</p>
       <p className="movie-rating">
         <img src={star} alt="" />
         <span>{movieData.imdbRating}</span>
