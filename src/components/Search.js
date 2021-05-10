@@ -68,95 +68,97 @@ const Search = () => {
   };
 
   return (
-    <div className={modalIsOpen ? "blur" : "main"}>
-      <div className="searchContainer">
-        <img className="logo" src={logo} alt="logo" />
-        <form class="input-wrapper" onSubmit={searchQueries}>
-          <img src={searchIcon} />
-          <input
-            name="query"
-            type="text"
-            placeholder="Search for a Movie..."
-            value={query}
-            onChange={(e) => {
-              setQuery(e.target.value);
-            }}
-          />
-        </form>
-      </div>
-      <div className="movie-list">
-        {movies.map((movie) => (
-          <MovieCard
-            movie={movie}
-            nominees={nominees}
-            key={movie.imdbID}
-            onClick={(value) =>
-              setNominees((prevNominees) => [value, ...prevNominees])
-            }
-          />
-        ))}
-      </div>
-      <div className="nominations-list">
-        <h2>Nominations</h2>
-        <button className={numNominees === 5 ? "hide" : "addNominees"}>
-          Add{" "}
-          <span style={{ color: "rgba(242, 242, 242, 0.78)" }}>
-            ({5 - numNominees})
-          </span>{" "}
-          Movies
-        </button>
-        <button
-          onClick={() => setModalIsOpen((prevModal) => !prevModal)}
-          className={numNominees === 5 ? "nominateMovies" : "hide"}
-        >
-          ★ Nominate
-        </button>
-        {nominees.length > 0
-          ? nominees.map((nominee) => (
-              <Nominations
-                nominee={nominee}
-                key={nominee}
-                onClick={deleteNominee}
-              />
-            ))
-          : ""}
-      </div>
-      {modalIsOpen ? (
-        <div className="modal">
-          <h2>Nominate your movies.</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere id
-            consequatur quae illo quod ipsa!
-          </p>
-          <div className="modalNominees">
-            {nominees.map((nominee) => (
-              <ModalCard nominee={nominee} key={nominee} />
-            ))}
-          </div>
-          <div className="modalBtns">
-            <button
-              onClick={share}
-              disabled={!isNominated}
-              className="shareModalBtn"
-            >
-              Share
-            </button>
-            <button
-              disabled={isNominated}
-              className="nominateModalBtn"
-              onClick={() =>
-                setIsNominated((prevIsNominated) => !prevIsNominated)
-              }
-            >
-              Nominate for Shoppie
-            </button>
-          </div>
-          <button
-            className="closeModal"
-            onClick={() => setModalIsOpen((prevModal) => !prevModal)}
-          ></button>
+    <div className="main visuallyHidden">
+      <div className={modalIsOpen ? "blur" : "main"}>
+        <div className="searchContainer">
+          <img className="logo" src={logo} alt="logo" />
+          <form class="input-wrapper" onSubmit={searchQueries}>
+            <img src={searchIcon} />
+            <input
+              name="query"
+              type="text"
+              placeholder="Search for a Movie..."
+              value={query}
+              onChange={(e) => {
+                setQuery(e.target.value);
+              }}
+            />
+          </form>
         </div>
-      ) : null}
+        <div className="movie-list">
+          {movies.map((movie) => (
+            <MovieCard
+              movie={movie}
+              nominees={nominees}
+              key={movie.imdbID}
+              onClick={(value) =>
+                setNominees((prevNominees) => [value, ...prevNominees])
+              }
+            />
+          ))}
+        </div>
+        <div className="nominations-list">
+          <h2>Nominations</h2>
+          <button className={numNominees === 5 ? "hide" : "addNominees"}>
+            Add{" "}
+            <span style={{ color: "rgba(242, 242, 242, 0.78)" }}>
+              ({5 - numNominees})
+            </span>{" "}
+            Movies
+          </button>
+          <button
+            onClick={() => setModalIsOpen((prevModal) => !prevModal)}
+            className={numNominees === 5 ? "nominateMovies" : "hide"}
+          >
+            ★ Nominate
+          </button>
+          {nominees.length > 0
+            ? nominees.map((nominee) => (
+                <Nominations
+                  nominee={nominee}
+                  key={nominee}
+                  onClick={deleteNominee}
+                />
+              ))
+            : ""}
+        </div>
+        {modalIsOpen ? (
+          <div className="modal">
+            <h2>Nominate your movies.</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere id
+              consequatur quae illo quod ipsa!
+            </p>
+            <div className="modalNominees">
+              {nominees.map((nominee) => (
+                <ModalCard nominee={nominee} key={nominee} />
+              ))}
+            </div>
+            <div className="modalBtns">
+              <button
+                onClick={share}
+                disabled={!isNominated}
+                className="shareModalBtn"
+              >
+                Share
+              </button>
+              <button
+                disabled={isNominated}
+                className="nominateModalBtn"
+                onClick={() =>
+                  setIsNominated((prevIsNominated) => !prevIsNominated)
+                }
+              >
+                Nominate for Shoppie
+              </button>
+            </div>
+            <button
+              className="closeModal"
+              onClick={() => setModalIsOpen((prevModal) => !prevModal)}
+            ></button>
+          </div>
+        ) : null}
+      </div>
     </div>
   );
 };

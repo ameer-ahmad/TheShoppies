@@ -142,7 +142,7 @@ input {
 }
 
 ::placeholder {
-    color: #f0b2a8;
+    color: rgba(242, 242, 242, 0.5);
 }
 
 
@@ -315,7 +315,7 @@ input {
 
 .nominateMovies {
     height: 6.8rem;
-    background: linear-gradient( 90deg, #95bf47 50%, rgba(149, 191, 71, 0) 150.98%);
+    background: linear-gradient(90deg, #95bf47 50%, rgba(149, 191, 71, 0) 150.98%);
     border: none;
     border-radius: 0.8rem;
     color: #212326;
@@ -376,7 +376,7 @@ input {
     height: 6.79rem;
     font-size: 1.8rem;
     color: #212326;
-    background: linear-gradient( 90deg, #95bf47 50%, rgba(149, 191, 71, 0) 150.98%);
+    background: linear-gradient(90deg, #95bf47 50%, rgba(149, 191, 71, 0) 150.98%);
     border: none;
     border-radius: 0.8rem;
     margin-right: 3rem;
@@ -391,7 +391,7 @@ input {
     border-radius: 0.8rem;
     border: none;
     cursor: pointer;
-    background: linear-gradient( 90deg, #95bf47 50%, rgba(149, 191, 71, 0) 150.98%);
+    background: linear-gradient(90deg, #95bf47 50%, rgba(149, 191, 71, 0) 150.98%);
 }
 
 .nominateModalBtn:disabled {

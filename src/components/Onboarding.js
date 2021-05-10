@@ -5,9 +5,12 @@ import shapes from "../img/shapes.png";
 const Onboarding = () => {
   const start = () => {
     const splashPage = document.querySelector(".container");
+    const main = document.querySelector(".main");
     splashPage.classList.add("hidden");
+
     setTimeout(() => {
       splashPage.classList.add("visuallyHidden");
+      main.classList.remove("visuallyHidden");
     }, 350);
   };
 
