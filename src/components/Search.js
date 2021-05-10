@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import logo from "../img/bigLogo.png";
 import searchIcon from "../img/search.png";
 import MovieCard from "./MovieCard";
 import Nominations from "./Nominations";
+import ModalCard from "./ModalCard";
 
 const Search = () => {
   // State for search results
@@ -11,6 +12,10 @@ const Search = () => {
   const [movies, setMovies] = useState([]);
   // State for nominees
   const [nominees, setNominees] = useState([]);
+  // State for modal
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  // State for nominated
+  const [isNominated, setIsNominated] = useState(false);
 
   let numNominees = nominees.length;
 
@@ -40,8 +45,30 @@ const Search = () => {
     }
   };
 
+  useEffect(() => {
+    if (nominees.length === 4) {
+      return () => {
+        setModalIsOpen((prevModal) => !prevModal);
+      };
+    }
+  }, [nominees]);
+
+  const share = (e) => {
+    if (navigator.share) {
+      navigator
+        .share({
+          title: "My Shoppies Nominees",
+          url: "",
+        })
+        .then(() => {
+          console.log("Thanks for sharing!");
+        })
+        .catch(console.error);
+    }
+  };
+
   return (
-    <>
+    <div className={modalIsOpen ? "blur" : "main"}>
       <div className="searchContainer">
         <img className="logo" src={logo} alt="logo" />
         <form class="input-wrapper" onSubmit={searchQueries}>
@@ -71,6 +98,19 @@ const Search = () => {
       </div>
       <div className="nominations-list">
         <h2>Nominations</h2>
+        <button className={numNominees === 5 ? "hide" : "addNominees"}>
+          Add{" "}
+          <span style={{ color: "rgba(242, 242, 242, 0.78)" }}>
+            ({5 - numNominees})
+          </span>{" "}
+          Movies
+        </button>
+        <button
+          onClick={() => setModalIsOpen((prevModal) => !prevModal)}
+          className={numNominees === 5 ? "nominateMovies" : "hide"}
+        >
+          ★ Nominate
+        </button>
         {nominees.length > 0
           ? nominees.map((nominee) => (
               <Nominations
@@ -80,18 +120,44 @@ const Search = () => {
               />
             ))
           : ""}
-        <button className={numNominees === 5 ? "hide" : "addNominees"}>
-          Add{" "}
-          <span style={{ color: "rgba(242, 242, 242, 0.78)" }}>
-            {5 - numNominees}
-          </span>{" "}
-          Movies
-        </button>
-        <button className={numNominees === 5 ? "nominateMovies" : "hide"}>
-          ★ Nominate
-        </button>
       </div>
-    </>
+      {modalIsOpen ? (
+        <div className="modal">
+          <h2>Nominate your movies.</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere id
+            consequatur quae illo quod ipsa!
+          </p>
+          <div className="modalNominees">
+            {nominees.map((nominee) => (
+              <ModalCard nominee={nominee} key={nominee} />
+            ))}
+          </div>
+          <div className="modalBtns">
+            <button
+              onClick={share}
+              disabled={!isNominated}
+              className="shareModalBtn"
+            >
+              Share
+            </button>
+            <button
+              disabled={isNominated}
+              className="nominateModalBtn"
+              onClick={() =>
+                setIsNominated((prevIsNominated) => !prevIsNominated)
+              }
+            >
+              Nominate for Shoppie
+            </button>
+          </div>
+          <button
+            className="closeModal"
+            onClick={() => setModalIsOpen((prevModal) => !prevModal)}
+          ></button>
+        </div>
+      ) : null}
+    </div>
   );
 };
 

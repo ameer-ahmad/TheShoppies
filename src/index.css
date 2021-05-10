@@ -16,6 +16,14 @@ html {
     font-family: "Shopify Sans Web Medium", Arial, Helvetica, sans-serif;
 }
 
+.main {
+    position: relative;
+}
+
+.blur div:not(:last-child, .modalBtns, .modalNominees, .modalNomineeCard) {
+    filter: blur(0.5rem);
+}
+
 
 /* ONBOARDING PAGE */
 
@@ -318,6 +326,119 @@ input {
 
 .hide {
     display: none;
+}
+
+
+/* Modal */
+
+.modal {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: 50%;
+    top: 50vh;
+    margin-top: -33.95rem;
+    margin-left: -56.5rem;
+    align-items: center;
+    height: 64rem;
+    width: 113rem;
+    background: rgba(56, 58, 61, 0.97);
+    border-radius: 0.5rem;
+}
+
+.modal h2 {
+    font-size: 3.6rem;
+    margin-top: 5rem;
+}
+
+.modal p {
+    font-size: 1.8rem;
+    margin-top: 2rem;
+}
+
+.modalBtns {
+    margin-top: 5rem;
+}
+
+.shareModalBtn:disabled {
+    width: 24.24rem;
+    height: 6.79rem;
+    font-size: 1.8rem;
+    color: white;
+    background: #333538;
+    border: none;
+    border-radius: 0.8rem;
+    margin-right: 3rem;
+}
+
+.shareModalBtn {
+    width: 24.24rem;
+    height: 6.79rem;
+    font-size: 1.8rem;
+    color: #212326;
+    background: linear-gradient( 90deg, #95bf47 50%, rgba(149, 191, 71, 0) 150.98%);
+    border: none;
+    border-radius: 0.8rem;
+    margin-right: 3rem;
+    cursor: pointer;
+}
+
+.nominateModalBtn {
+    width: 41.89rem;
+    height: 6.79rem;
+    font-size: 1.8rem;
+    color: #212326;
+    border-radius: 0.8rem;
+    border: none;
+    cursor: pointer;
+    background: linear-gradient( 90deg, #95bf47 50%, rgba(149, 191, 71, 0) 150.98%);
+}
+
+.nominateModalBtn:disabled {
+    background: rgba(36, 38, 41, 1);
+    color: rgba(242, 242, 242, 0.58);
+    cursor: default;
+}
+
+.closeModal {
+    width: 4.59rem;
+    height: 4.59rem;
+    border-radius: 4rem;
+    border: none;
+    background: rgba(36, 38, 41, 0.29);
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.5rem;
+}
+
+.closeModal::after {
+    content: "\2715";
+}
+
+.modalNominees {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 8rem;
+}
+
+.modalNomineeCard {
+    width: 13.74rem;
+}
+
+.modalNomineeCard img {
+    width: 13.74rem;
+    height: 19.95rem;
+    border-radius: 0.5rem;
+}
+
+.modalNomineeCard h3 {
+    font-size: 1.4rem;
+    margin-top: 1rem;
 }
 
 
