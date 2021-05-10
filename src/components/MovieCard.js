@@ -9,7 +9,7 @@ const MovieCard = (props) => {
 
   useEffect(async () => {
     try {
-      const url = `http://www.omdbapi.com/?i=${movie.imdbID}&apikey=92b81fc0`;
+      const url = `https://www.omdbapi.com/?i=${movie.imdbID}&apikey=92b81fc0`;
       const res = await fetch(url);
       const data = await res.json();
       setMovieData({ ...data });
