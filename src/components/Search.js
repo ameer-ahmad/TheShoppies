@@ -22,7 +22,7 @@ const Search = () => {
   const searchQueries = async (e) => {
     e.preventDefault();
 
-    const url = `http://www.omdbapi.com/?s=${query}&apikey=92b81fc0`;
+    const url = ` https://cors-anywhere.herokuapp.com/http://www.omdbapi.com/?s=${query}&apikey=92b81fc0`;
 
     try {
       const res = await fetch(url);
