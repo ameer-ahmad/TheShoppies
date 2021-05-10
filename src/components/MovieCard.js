@@ -14,7 +14,7 @@ const MovieCard = (props) => {
       const data = await res.json();
       setMovieData({ ...data });
     } catch (err) {
-      console.error(err);
+      console.log("error");
     }
   }, [movie.imdbID]);
 

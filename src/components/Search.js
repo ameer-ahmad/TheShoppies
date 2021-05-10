@@ -27,7 +27,11 @@ const Search = () => {
     try {
       const res = await fetch(url);
       const movieInfo = await res.json();
-      setMovies(movieInfo.Search);
+      if (typeof movieInfo.Search === "undefined") {
+        setMovies([]);
+      } else {
+        setMovies(movieInfo.Search);
+      }
     } catch (err) {
       console.error(err);
     }
