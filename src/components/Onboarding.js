@@ -18,11 +18,10 @@ const Onboarding = () => {
     <div className="container">
       <img className="logo" src={logo} alt="logo" />
       <div className="onboarding">
-        <h1>Lorem Ipsum</h1>
+        <h1>The Shoppies.</h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ac sit
-          tristique nam tortor rhoncus dignissim interdum id. Feugiat lorem
-          adipiscing.
+          Shoppies is a web app that makes it easy to nominate your favourite
+          movies for The Shoppies.
         </p>
         <button onClick={start}>Get Started</button>
       </div>

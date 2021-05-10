@@ -50,10 +50,8 @@ const Search = () => {
   };
 
   useEffect(() => {
-    if (nominees.length === 4) {
-      return () => {
-        setModalIsOpen((prevModal) => !prevModal);
-      };
+    if (nominees.length === 5) {
+      setModalIsOpen((prevModal) => !prevModal);
     }
   }, [nominees]);
 
@@ -130,8 +128,8 @@ const Search = () => {
           <div className="modal">
             <h2>Nominate your movies.</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere id
-              consequatur quae illo quod ipsa!
+              Thank you for your nominations! Click below to share your
+              nominations with your friends.
             </p>
             <div className="modalNominees">
               {nominees.map((nominee) => (
@@ -158,7 +156,10 @@ const Search = () => {
             </div>
             <button
               className="closeModal"
-              onClick={() => setModalIsOpen((prevModal) => !prevModal)}
+              onClick={() => {
+                setModalIsOpen((prevModal) => !prevModal);
+                setIsNominated((prevIsNominated) => !prevIsNominated);
+              }}
             ></button>
           </div>
         ) : null}
